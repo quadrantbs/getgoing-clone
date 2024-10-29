@@ -37,9 +37,9 @@ export default function PopularGuidesSection() {
         modules={[Pagination]}
         style={{
           "--swiper-pagination-color": "var(--red)",
+          paddingBottom: "30px",
         }}
         className="pb-5"
-        
       >
         {guides.map((guide) => (
           <SwiperSlide key={guide.id} className="!w-[184px] px-2">

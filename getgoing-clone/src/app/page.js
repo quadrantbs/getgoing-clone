@@ -1,3 +1,4 @@
+import ArticlesSection from "./components/homePage/ArticlesSection";
 import CarouselSection from "./components/homePage/CarouselSection";
 import PopularCitiesSection from "./components/homePage/PopularCitiesSection";
 import PopularGuidesSection from "./components/homePage/PopularGuidesSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <PrivateTripSection />
       <PopularCitiesSection />
       <TestimonialsSection />
+      <ArticlesSection />
     </div>
   );
 }

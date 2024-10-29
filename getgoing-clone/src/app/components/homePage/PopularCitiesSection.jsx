@@ -40,6 +40,7 @@ export default function PopularCitiesSection() {
         className="pt-3 pb-5"
         style={{
           "--swiper-pagination-color": "var(--red)",
+          paddingBottom: "50px",
         }}
       >
         {cities.map((city) => (

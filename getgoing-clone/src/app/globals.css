@@ -42,3 +42,12 @@ body {
   --font-family-sans-serif: "Poppins", sans-serif;
   --font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+
+@keyframes moveDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

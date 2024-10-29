@@ -1,16 +1,40 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import SearchBar from "./Searchbar";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 90);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="navbar p-4 bg-transparent mx-auto justify-between max-w-[1280px]">
-      <div className="navbar-start lg:w-auto lg:pl-[15px]">
-        {/* Logo */}
+    <nav
+      className={`navbar p-4 mx-auto justify-between max-w-[1280px] top-0 left-0 right-0 z-50 transition-transform duration-500 transform ${
+        isScrolled
+          ? "fixed translate-y-0 bg-white bg-opacity-50 backdrop-blur-md shadow-lg rounded-full mt-[25px] w-[95%]"
+          : "translate-y-0"
+      }`}
+      style={{ animation: isScrolled ? "moveDown 0.3s ease-in-out" : "" }}
+    >
+      <div
+        className={`navbar-start w-1/3 lg:w-auto ${isScrolled ? "" : "lg:pl-[15px]"}`}
+      >
+        {/* Logo Section */}
         <Link href="/" className="py-1">
           <img
-            src="https://getgoing.co.id/_next/static/images/LogoGetGoing-1b06f75eefdc319bb98ba925a24ee023.png"
+            src={isScrolled ? "/img/LogoOnly.png" : "/img/Logo.png"}
             alt="GetGoing Logo"
-            className="w-[100px] sm:w-[200px] max-w-none"
+            className={`max-w-none transition-all duration-300 ${
+              isScrolled ? "w-11 mr-5" : "w-[100px] sm:w-[200px]"
+            }`}
           />
         </Link>
       </div>
@@ -18,7 +42,7 @@ export default function Navbar() {
       {/* Search Bar */}
       <SearchBar />
 
-      <div className="navbar-end w-1/4 lg:w-full pl-[5px] pr-[10px] text-[red]">
+      <div className="navbar-end w-1/3 lg:w-full pl-[5px] pr-[10px] text-[red]">
         {/* Toggle Navigation Button with Dropdown for smaller screens */}
         <div className="dropdown dropdown-end lg:hidden">
           <button
@@ -33,7 +57,7 @@ export default function Navbar() {
           {/* Dropdown Menu */}
           <ul
             tabIndex={0}
-            className="dropdown-content menu p-2 rounded-box w-52"
+            className="dropdown-content menu p-2 rounded-box w-52 bg-white shadow-md"
           >
             <li>
               <Link href="/" className="m-2 font-bold">
@@ -41,12 +65,12 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/" className="m-2 ">
+              <Link href="/" className="m-2">
                 Servis Kami
               </Link>
             </li>
             <li>
-              <Link href="/" className="m-2 ">
+              <Link href="/" className="m-2">
                 Blog
               </Link>
             </li>
@@ -65,10 +89,10 @@ export default function Navbar() {
           <Link href="/" className="m-2 font-bold">
             Beranda
           </Link>
-          <Link href="/" className="m-2 ">
+          <Link href="/" className="m-2">
             Servis Kami
           </Link>
-          <Link href="/" className="m-2 ">
+          <Link href="/" className="m-2">
             Blog
           </Link>
           <Link href="/" className="bg-transparent">

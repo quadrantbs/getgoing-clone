@@ -1,4 +1,3 @@
-// components/SearchBar.js
 export default function SearchBar() {
   return (
     <div
@@ -13,7 +12,7 @@ export default function SearchBar() {
         />
         <button
           type="submit"
-          className="rounded-full bg-[#c00] text-white hover:bg-[#c00] w-[32px] h-[32px] mr-1"
+          className="rounded-full bg-[--red] text-white hover:bg-[--red] w-[32px] h-[32px] mr-1"
         >
           <i className="fas fa-arrow-right text-sm" />
         </button>

@@ -53,6 +53,6 @@ body {
 }
 
 
-.swiper-initialized {
-  height: 350px;
+.swiper-wrapper {
+  padding-bottom: 40px;
 }

@@ -14,9 +14,9 @@ export default function Footer() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-2 flex items-start"
+                  className="flex items-start"
                 >
-                  <span className="footer-address-text relative">
+                  <span className="relative">
                     <img
                       src="/img/icon/pin.png"
                       alt="Location"
@@ -36,7 +36,7 @@ export default function Footer() {
                   className="size-[30px]"
                 />
                 <a target="_blank" rel="noopener noreferrer" className="ml-2 ">
-                  <span className="footer-address-text">24/7 - Online</span>
+                  <span className="">24/7 - Online</span>
                 </a>
               </li>
               <li className="flex items-center">
@@ -51,7 +51,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="ml-2 "
                 >
-                  <span className="footer-address-text">
+                  <span className="">
                     lets@getgoing.co.id
                   </span>
                 </a>
@@ -68,7 +68,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="ml-2 "
                 >
-                  <span className="footer-address-text">@getgoing.co.id</span>
+                  <span className="">@getgoing.co.id</span>
                 </a>
               </li>
               <li className="flex items-center">
@@ -83,7 +83,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="ml-2 "
                 >
-                  <span className="footer-address-text">@getgoing.co.id</span>
+                  <span className="">@getgoing.co.id</span>
                 </a>
               </li>
             </ul>

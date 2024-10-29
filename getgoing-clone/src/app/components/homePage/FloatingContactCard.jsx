@@ -12,7 +12,7 @@ export default function FloatingContactCard() {
   return (
     <div
       onClick={toggleCard}
-      className={`fixed bottom-[10px] right-[10px] bg-white rounded-2xl ${
+      className={`fixed bottom-[10px] z-50 right-[10px] bg-white rounded-2xl ${
         isMinimized
           ? "w-[50px] h-[50px] flex items-center justify-center"
           : "w-[360px] flex p-5 items-center justify-between"

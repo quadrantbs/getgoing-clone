@@ -1,6 +1,6 @@
 export default function PrivateTripSection() {
   return (
-    <div className="container max-w-[1320px] mx-auto">
+    <div className="px-4 lg:max-w-[1320px] md:mx-auto">
       <div className="flex flex-col md:flex-row">
         {/* Left Column */}
         <div className="mx-auto w-3/4 md:w-1/2">

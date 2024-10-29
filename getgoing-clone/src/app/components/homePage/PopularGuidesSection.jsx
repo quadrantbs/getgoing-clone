@@ -24,7 +24,7 @@ export default function PopularGuidesSection() {
   }, []);
 
   return (
-    <div className="container max-w-[1320px] mx-auto py-5">
+    <div className="container px-4 max-w-[1320px] mx-auto py-5">
       <div className="mb-6">
         <h2 className="text-2xl font-bold">
           Sedang <span className="text-[--red]">Populer</span>
@@ -44,7 +44,7 @@ export default function PopularGuidesSection() {
         {guides.map((guide) => (
           <SwiperSlide key={guide.id} className="!w-[184px] px-2">
             <div className="col py-3">
-              <div className="card-box relative rounded-lg bg-gradient-to-b transition-transform duration-300 transform hover:-translate-y-2">
+              <div className="card-box relative rounded-lg transition-transform duration-300 transform hover:-translate-y-2">
                 <a
                   href={`/getguide/getguide?id=${guide.id}`}
                   className="absolute inset-0 z-10"

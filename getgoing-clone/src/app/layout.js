@@ -1,19 +1,7 @@
-import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import FloatingContactCard from "./components/FloatingContactCard";
-import Footer from "./components/Footer";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Navbar from "./components/layout/Navbar";
+import FloatingContactCard from "./components/homePage/FloatingContactCard";
+import Footer from "./components/layout/Footer";
 
 export const metadata = {
   title: "Trip Planner, Guide, Info Destinasi | GetGoing",
@@ -49,7 +37,7 @@ export default function RootLayout({ children }) {
       <body
       // className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <header className="flex">
+        <header>
           <Navbar />
         </header>
         {children}

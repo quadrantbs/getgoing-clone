@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`navbar p-4 mx-auto justify-between max-w-[1280px] top-0 left-0 right-0 z-50 transition-transform duration-500 transform ${
+      className={`flex navbar p-4 mx-auto justify-between max-w-[1280px] top-0 left-0 right-0 z-50 transition-transform duration-500 transform ${
         isScrolled
           ? "fixed translate-y-0 bg-white bg-opacity-50 backdrop-blur-md shadow-lg rounded-full mt-[25px] w-[95%]"
           : "translate-y-0"

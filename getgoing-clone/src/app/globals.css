@@ -51,3 +51,8 @@ body {
     transform: translateY(0);
   }
 }
+
+
+.swiper-initialized {
+  height: 350px;
+}

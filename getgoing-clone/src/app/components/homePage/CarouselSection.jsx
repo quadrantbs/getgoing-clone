@@ -7,7 +7,7 @@ import CarouselSlideTwo from "../carouseSlides/CarouseSlideTwo";
 
 export default function CarouselSection() {
   return (
-    <div className="w-full">
+    <div className="w-full -z-10">
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation

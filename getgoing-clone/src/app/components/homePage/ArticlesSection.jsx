@@ -1,29 +1,6 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
 
-export default function ArticlesSection() {
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await fetch("/api/articles");
-        const data = await response.json();
-
-        // Shuffle articles and select 3 random ones
-        const shuffled = data.sort(() => 0.5 - Math.random());
-        const randomArticles = shuffled.slice(0, 3);
-
-        setArticles(randomArticles);
-      } catch (error) {
-        console.error("Error fetching articles:", error);
-      }
-    };
-
-    fetchArticles();
-  }, []);
+export default function ArticlesSection({articles}) {
 
   return (
     <div className="container max-w-[1320px] mx-auto px-4">

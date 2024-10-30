@@ -1,28 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function PopularCitiesSection() {
-  const [cities, setCities] = useState([]);
-
-  useEffect(() => {
-    const fetchCities = async () => {
-      try {
-        const response = await fetch("/api/cities");
-        const data = await response.json();
-        setCities(data);
-      } catch (error) {
-        console.error("Error fetching cities:", error);
-      }
-    };
-
-    fetchCities();
-  }, []);
-
+export default function PopularCitiesSection({cities}) {
   return (
     <div className="container px-4 max-w-[1320px] mx-auto py-4">
       <div className="col-md-8 mx-auto">
@@ -43,7 +27,7 @@ export default function PopularCitiesSection() {
           paddingBottom: "50px",
         }}
       >
-        {cities.map((city) => (
+        {cities?.map((city) => (
           <SwiperSlide key={city.id} className="!w-[250px] px-2 mr-[10px] py-2">
             <div className="w-[230px] h-[350px] relative rounded-lg overflow-hidden transition-transform duration-300 transform hover:-translate-y-2">
               <a href={city.link} className="block w-full h-full">

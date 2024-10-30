@@ -1,27 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function PopularGuidesSection() {
-  const [guides, setGuides] = useState([]);
-
-  useEffect(() => {
-    const fetchGuides = async () => {
-      try {
-        const response = await fetch("/api/guides");
-        const data = await response.json();
-        setGuides(data);
-      } catch (error) {
-        console.error("Error fetching guides:", error);
-      }
-    };
-
-    fetchGuides();
-  }, []);
+export default function PopularGuidesSection({guides}) {
 
   return (
     <div className="container px-4 max-w-[1320px] mx-auto py-5">

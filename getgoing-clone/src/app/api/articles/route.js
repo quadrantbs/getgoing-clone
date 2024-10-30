@@ -86,5 +86,8 @@ export async function GET() {
     },
   ];
 
-  return NextResponse.json(articles);
+  const shuffled = articles.sort(() => 0.5 - Math.random());
+  const randomArticles = shuffled.slice(0, 3);
+
+  return NextResponse.json(randomArticles);
 }

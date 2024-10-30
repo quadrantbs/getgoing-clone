@@ -1,26 +1,15 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Controller, EffectCoverflow, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function TestimonialsSection() {
-  const [testimonials, setTestimonials] = useState([]);
+export default function TestimonialsSection({testimonials}) {
   const [textSwiper, setTextSwiper] = useState(null);
   const [cardSwiper, setCardSwiper] = useState(null);
-
-  useEffect(() => {
-    const fetchTestimonials = async () => {
-      const response = await fetch("/api/testimonials");
-      const data = await response.json();
-      setTestimonials(data);
-    };
-
-    fetchTestimonials();
-  }, []);
 
   return (
     <div className="container max-w-[1320px] mx-auto text-center relative p-6">
